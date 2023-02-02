@@ -1,0 +1,56 @@
+
+<% include('../layouts/header.ejs') %>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" />
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    
+    .container-fluid{
+        padding-top: 2rem;
+        padding-left: 10rem;
+    }
+    .contain{
+        width: 100%;
+        height:100%;
+         background-image: linear-gradient(rgb(241, 136, 136),rgb(117, 117, 255));
+    }
+    </style>
+
+<div class="contain" >
+    <div class="container-fluid" >
+
+
+
+    <h1>Add New User</h1>
+
+    <form action="" method="post" enctype="multiple/form-data">
+        <input type="text" name="name" placeholder="Enter Name" required   >
+        <br><br>
+        <input type="email" name="email" placeholder="Enter Email" required>
+        <br><br>
+        <input type="text" name="mobile" placeholder="Enter Mobile" required>
+        <br><br>
+        <input type="password" name="password" placeholder="Enter password" required>
+        <br><br>
+        <input type="submit" value="Add User">
+        <br><br>
+    </form>
+
+    <% 
+        if (typeof message !==  'undefined' ){ 
+            %>
+            <p style="color: rgb(237, 41, 6);"><%= message %></p>
+            <%
+        } 
+    %>
+
+    <a href="/admin/dashboard">Go Back</a>
+
+
+</div>
+</div>  
+    
+<% include('../layouts/footer.ejs') %>
