@@ -1,0 +1,139 @@
+<!-- <% include ("../layouts/header.ejs")%>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    
+    .container-fluid{
+        padding-top: 2rem;
+        padding-left: 10rem;
+    }
+    .container{
+        width: 100%;
+        height:100%;
+        background-image: linear-gradient(rgb(241, 136, 136),rgb(117, 117, 255));
+    }
+    </style>
+
+<div class="container" >
+    <div class="container-fluid" >
+
+    <h1>Dashboard</h1>
+
+    <a href="/admin/new-user">Add New User</a>
+    <br><br>
+
+    <table width="100%">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>Action</th>
+        </tr>
+
+        <% if(users.length> 0){
+            for(let i=0;i<users.length;i++){ %>
+                <tr>
+                    <td><%= users[i].name %></td>
+                    <td><%= users[i].email %></td>
+                    <td><%= users[i].mobile %></td>
+                    <td><a href="/admin/edit-user?id=<%= users[i]._id %>">Edit</a></td>
+                    <td><a href="/admin/delete-user?id=<%= users[i]._id %>" onclick="return confirm('Are you sure you want to delete the user');" >Delete</a></td>
+
+                </tr>
+                <% } }else{ %>
+                    <tr>
+                        <td colspan="5">Users Not Found</td>
+                        
+                    </tr>
+                    <% } %>
+
+    </table>
+
+
+<br>
+    <a href="/admin/home">Go to Home</a>
+
+    </div>
+    </div>
+    <% include ("../layouts/footer.ejs")%>
+
+ -->
+
+
+
+
+
+
+
+
+
+<% include("../layouts/header.ejs")%>
+
+
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    
+    .container-fluid{
+        padding-top: 2rem;
+        padding-left: 10rem;
+    }
+    .container{
+        width: 100%;
+        height:100%;
+        background-image: linear-gradient(rgb(241, 136, 136),rgb(117, 117, 255));
+    }
+    </style>
+
+<div class="container" >
+    <div class="container-fluid" >
+
+
+
+<h1>Dashboard</h1>
+
+<a href="/admin/new-user">Add New User</a>
+<br><br>
+
+<p><% users %></p>
+
+<table width="50%">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Mobile</th>
+    <th>Action</th>
+    </tr>
+
+    <% users.forEach(function(user) { %>
+        <tbody>
+          <tr>
+             
+             <td><%= user.name %></td>
+              <td><%= user.email %></td>
+              <td><%= user.mobile %></td>
+          
+                <td><a href="/admin/edit-user?id=<%= user._id %>">Edit</a>
+               <a  class="btn btn-danger" onclick="confirmDelete(this);" href="/admin/deleteuser?id=<%= user._id %>">Delete</a></td>
+              </tr>
+              </td>
+               <!-- <td><a href="/admin/edit-user?id= <%= user._id %>">Edit</a></td>  -->
+            </tr>
+            <% }); %>
+   
+</table>
+<br>
+
+
+
+<a href="/admin/home">Go to Home</a>
+
+
+</div>
+</div>
+<% include ("../layouts/footer.ejs")%>

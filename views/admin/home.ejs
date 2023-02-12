@@ -1,0 +1,103 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+    <!-- Section: Design Block -->
+<section class="text-center">
+    <!-- Background image -->
+    <div class="p-5 bg-image" style="
+          background-image: url('https://mdbootstrap.com/img/new/textures/full/171.jpg');
+          height: 300px;
+          "></div>
+    <!-- Background image -->
+  
+    <div class="card mx-4 mx-md-5 shadow-5-strong" style="
+          margin-top: -100px;
+          background: hsla(0, 0%, 100%, 0.8);
+          backdrop-filter: blur(30px);
+          ">
+      <div class="card-body py-5 px-md-5">
+  
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-8">
+            <h2 class="fw-bold mb-5">WELCOME,<%= admin.name %></h2>
+
+            <div style=" margin-left: auto; margin-right: auto; width: fit-content;" >
+                <table style=" height:80px; width: 100%;border: 1px solid rgb(20, 37, 69) ; font-family: Arial, Helvetica, sans-serif;">
+
+                    <tr>
+                        <td>Email</td>
+                        <td><%= admin.email %></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Mobile </td>
+                        <td><%= admin.mobile %></td>
+                    </tr>
+                    
+                </table>
+
+                <div class="d-flex justify-content-between align-items-center" style="margin-left: auto;margin-right: auto;">
+      
+                    <div class="text-center text-lg-start mt-4 pt-2 ">
+                       <a class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;" href="/admin/dashboard">Dashboard</a>
+                        
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center" style="margin-left: auto;margin-right: auto;">
+      
+                        <div class="text-center text-lg-start mt-4 pt-2 ">
+                          <a class="btn btn-primary btn-lg ml-2"  style=" padding-left: 2.5rem; padding-right: 2.5rem;" href="/admin/logout">Logout</a>
+                            
+                        </div>
+
+            </div>
+
+           
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Section: Design Block -->
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+
+<%  include("../layouts/header.ejs")%>
+
+<h1>Welcome,<%=admin.name %></h1>
+<a href="/admin/dashboard">Dashboard</a>
+
+<table style="width: 50%;">
+<tr>
+    <td>Email</td>
+    <td><%= admin.email %></td>
+</tr>
+<tr>
+    <td>mobile</td>
+    <td><%= admin.mobile %></td>
+</tr>
+</table>
+
+<a href="/admin/logout">Logout</a> --> 

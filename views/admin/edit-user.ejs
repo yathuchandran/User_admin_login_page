@@ -1,0 +1,23 @@
+
+
+<%include('../layouts/header.ejs')%>
+
+<h1>Edit User</h1>
+
+
+<form action="/admin/edit-user?id=<%= user._id %>" method="post">
+
+<input type="name" name="name" placeholder="Enter name" value="<%=user.name %>" required>
+<br><br>
+<input type="email" name="email" placeholder="enter Name" value="<%=user.email %>" required>
+<br><br>
+<input type="text" name="mobile" placeholder="enter mobile" value="<%=user.mobile %>" required >
+<br><br>
+<input type="hidden" name="id" value="">
+
+<button type="submit" value="Update User">Update user</button>
+</form>
+
+<a href="/admin/home">Go Dashboard</a>
+
+<% include('../layouts/footer.ejs')%>
