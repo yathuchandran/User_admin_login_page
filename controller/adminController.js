@@ -122,8 +122,6 @@ const addUser = async (req, res) => {
 
         const spassword = await securePassword(password)
 
-     
-
         const user = new User({
             name: name,
             email: email,

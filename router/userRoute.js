@@ -1,13 +1,10 @@
 const express = require("express");
 const user_route = express();
 const session = require("express-session");
-
 const config =require("../config/config");
-
 user_route.use(session({secret:config.sessionSecret}));
 
 const auth = require("../middleware/auth");
-
 user_route.set('view engine', 'ejs');
 user_route.set('views', './views/users');
 
