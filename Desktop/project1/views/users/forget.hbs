@@ -1,0 +1,23 @@
+{{> userheader}}
+
+<h1>Forget Password</h1>
+
+ {{#ifnoteq message 'undefined'}}
+        <h4>{{ message}}</h4>
+    {{/ifnoteq}}
+
+
+
+<form action="/forget" method="post">
+
+<input type="email" name="email" placeholder="enter email"  >
+    <br><br>
+
+<input type="submit" value="send reset link">
+
+
+</form>
+
+<a href="/forget ">Forget password</a>
+
+{{> userfooter}}

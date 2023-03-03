@@ -1,0 +1,170 @@
+{{>adminHeader}}
+
+<!DOCTYPE html>
+<html lang="en">
+
+ <head>
+    <title>Add Product</title>
+    {{!--
+    <link rel="stylesheets" type="text/stylesheets" href="/stylesheets/addproduct.css"> --}}
+    <link rel="stylesheets" type="text/stylesheets" href="/stylesheets/addproduct.css">
+
+ </head>
+ <style>
+    .form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Style the form fields */
+  .form-field {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  /* Style the label */
+  .form-field label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+  
+  /* Style the input */
+  .form-field input {
+    padding: 0.5rem;
+    border: 2px solid #000000;
+    border-radius: 4px;
+  }
+  /* Style the image preview */
+  .image-preview {
+    width: 200px;
+    height: 200px;
+    border: 2px solid #000000;
+    margin-bottom: 1rem;
+  }
+  
+  /* Style the submit button */
+  .submit-button {
+    padding: 0.5rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+ </style>
+
+<body>
+    <div class="form-container">
+        <h1>Add Product</h1>
+        <form action="" method="post" enctype="multipart/form-data">
+
+
+            <div class="form-field">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
+            </div>
+
+            <div class="form-field">
+                <label for="name">Description:</label>
+                <input type="text" id="name" name="description">
+            </div>
+
+
+            <div class="form-field">
+                <label for="image">Image:</label>
+                <input type="file" id="image" name="image" accept="image/*" onchange="previewImage(event)" multiple>
+                <div class="image-preview"></div>
+            </div>
+
+
+
+            <div class="form-field">
+                <label for="name">Category:</label>
+
+                <select id="name" name="category" input type="text">
+                    <option value="63ef6091429d6da0324a34b3">Women</option>
+                    <option value="63f45b25c8389839cd72d8e5">Men</option>
+                    <option value="63f45c65a9820314ddf1cc14">Kids</option>
+                    <option value="63f45cb3a9820314ddf1cc19cl">Accessories</option>
+                </select>
+
+            </div>
+
+
+
+
+            <div class="form-field">
+                <label for="name">Price:</label>
+                <input type="number" id="name" name="price">
+            </div>
+
+
+            <div class="form-field">
+                <label for="name">Brand:</label>
+                <input type="text" id="name" name="brand">
+            </div>
+
+
+
+            <div class="form-field">
+                <label for="name">Quantity:</label>
+                <input type="number" id="name" name="quantity">
+            </div>
+
+
+            <div>
+                <p style="color: green;">
+                    {{message}}
+                </p>
+            </div>
+
+            {{!-- <div>
+                <p style="color: green;">
+                    {{message1}}
+                </p>
+            </div> --}}
+
+            <button class="submit-button" type="submit">Submit</button>
+            <a href="/admin/home" class="btn btn-edit">Go Back</a>
+        </form>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        function previewImage(event) {
+            const preview = document.querySelector('.image-preview');
+            preview.innerHTML = '';
+            const file = event.target.files[0];
+            const reader = new FileReader();
+            reader.onload = function (event) {
+                const img = new Image();
+                img.src = event.target.result;
+                img.style.width = '100%';
+                img.style.height = '100%';
+                preview.appendChild(img);
+            };
+            reader.readAsDataURL(file);
+        }
+    </script>
+ </body>
+
+</html>
+
+
+

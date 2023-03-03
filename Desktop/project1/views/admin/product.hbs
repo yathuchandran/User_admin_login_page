@@ -1,0 +1,76 @@
+{{> adminHeader}}
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.5.0/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+       <link rel="stylesheet" type="text/css"   href="/css/product.css"> 
+  </head>
+  
+  
+  
+  
+  
+  <body>
+    <div class="container">
+      <div class="table-container">
+        <h1>Products</h1>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Image</th>
+              <th>Category</th>
+              <th>Price</th>
+              <th>Brand</th>
+              <th>Quantity</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+       
+ {{!-- <a href="#" class="btn btn-edit">Edit Products</a> --}}
+
+  <tbody>
+    <a href="/admin/addproduct" class="btn btn-success">Add Product</a>
+    {{#each product}}
+    <tr>
+      {{!-- <td>{{this._id}}</td> --}}
+      <td>{{this.name}}</td>
+      <td>{{this.description}}</td>
+      <td><img src="/uploads/{{this.image.[0]}}" alt="{{this.image}}" width="100px" height="100px"></td>
+      <td>{{this.category}}</td>
+      <td>{{this.price}}</td>
+      <td>{{this.brand}}</td>
+      <td>{{this.quantity}}</td>
+        
+        <td>
+        <a href="/admin/editproduct?id={{this.id}}" class="btn btn-edit">Edit</a>
+        {{!-- <a href="#" class="btn btn-delete">Block</a> --}}
+        {{!-- <a href="/admin/blockproduct?id={{this.id}}" class="btn btn-delete">Block</a> --}}
+           {{#if this.is_blocked }}
+         
+             <a href="/admin/blockproduct/{{this._id}}" class="btn btn-success">Unblock</a>
+        {{else}}
+          
+             <a href="/admin/blockproduct/{{this._id}}" class="btn btn-delete">Block</a>
+        {{/if}} 
+        </td>
+    </tr>
+    {{/each}}
+    
+  </tbody>
+        </table>
+      </div>
+    </div>
+      
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.5.0/js/bootstrap.min.js"></script>
+  </body>
+</html>

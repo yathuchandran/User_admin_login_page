@@ -1,0 +1,44 @@
+{{!-- {{>adminHeader}}
+<table class="table table-striped" id="myTable">
+
+    <thead>
+
+        <tr>
+
+            <th>#</th>
+            <th>Product name</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th>Stock</th>
+            <th>Category</th>
+            <th>img 1</th>
+            <th>img 2</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each products}}
+        <tr>
+            <th>{{counter @index}}</th>
+            <td>{{productName}}</td>
+            <td>{{price}}</td>
+            <td>{{description}}</td>
+            <td>{{stock}}</td>
+            <td>{{category}}</td>
+
+            <td><img src=" /img/{{img1}}"></td>
+            <td><img src="/img/{{img2}}"></td>
+            <td>
+
+                <a href="/admin/products/edit?id={{_id}}" class=" mt-1 btn btn-primary">Edit</a>
+
+
+                <a onclick="Delete('{{_id}}')" data-bs-toggle="modal" data-bs-target="#deleteBut"
+                    class="mt-1 btn btn-danger">Delete</a>
+
+
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table> --}}

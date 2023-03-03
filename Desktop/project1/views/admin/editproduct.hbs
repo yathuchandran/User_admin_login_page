@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Edit Product</title>
+ <link rel="stylesheet" type="text/stylesheets"   href="/stylesheets/editproduct.css"> 
+</head>
+
+<body>
+  <div class="form-container">
+    <h1>Edit Product</h1>
+    <form action="" method="post" enctype="multipart/form-data"  >
+    {{!-- <form action="/admin/editproduct/{{product._id}}" method="post" enctype="multipart/form-data"  > --}}
+
+
+      <div class="form-field">
+        <label for="name">Name:</label>
+        <input type="text" id="name" class="form-control" value={{product.name}} name="name">
+      </div>
+
+      <div class="form-field">
+        <label for="name">Description:</label>
+        <input type="text" id="name"  class="form-control" value={{product.description}} name="description">
+      </div>
+
+
+       <div class="form-field">
+        <label for="image">Image:</label>
+        <input type="file" id="image" name="image"  onchange="previewImage(event)" multiple>
+        <div class="image-preview"></div>
+      </div>
+
+          <div class="form-field">
+        <label for="name">Category:</label>
+        <input type="text" id="name" value={{product.category}}  name="category">
+      </div>
+
+        <div class="form-field">
+        <label for="name">Price:</label>
+        <input type="number" id="name" value={{product.price}}  name="price">
+      </div>
+
+
+          <div class="form-field">
+        <label for="name">Brand:</label>
+        <input type="text" id="name" value={{product.brand}} name="brand">
+      </div>
+
+
+
+        <div class="form-field">
+        <label for="name">Quantity:</label>
+        <input type="number" id="name" value={{product.quantity}}  name="quantity">
+      </div>
+
+
+      <div>
+        <p style="color: green;">
+          {{message}}
+        </p>
+      </div>
+
+
+      <button class="submit-button" type="submit">Submit</button>
+<br>
+<br>
+         <a href="/admin/product" class="btn btn-success">Go Back</a>
+
+ 
+
+       <input type="hidden" name="id" value={{product._id }}>
+
+
+    </form>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script>
+    function previewImage(event) {
+      const preview = document.querySelector('.image-preview');
+      preview.innerHTML = '';
+      const file = event.target.files[0];
+      const reader = new FileReader();
+      reader.onload = function (event) {
+        const img = new Image();
+        img.src = event.target.result;
+        img.style.width = '100%';
+        img.style.height = '100%';
+        preview.appendChild(img);
+      };
+      reader.readAsDataURL(file);
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+
+body {
+    background-color: #f5f5f5;
+  }
+  .table-container {
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 100px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  .table-container h1 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .table-container td {
+    vertical-align: middle;
+  }
+  .table-container a {
+    margin-right: 10px;
+  }
+  .table-container .btn-edit {
+    background-color: #007bff;
+    color: #fff;
+  }
+  /* {{!-- .table-container .btn-edit:hover {
+    background-color: #0069d9;
+  } --}} */
+  .table-container .btn-delete {
+    background-color: #dc3545;
+    color: #fff;
+  }
+  .table-container .btn-delete:hover {
+    background-color: #c82333;
+  }

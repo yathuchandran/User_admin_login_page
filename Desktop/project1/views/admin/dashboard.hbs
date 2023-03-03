@@ -1,0 +1,43 @@
+{{>adminHeader}}
+
+
+<div class="container">
+    <div class="container-fluid">
+
+
+
+        <h1>Dashboard</h1>
+
+        <a href="/admin/addProduct">Add New User</a>
+        <br><br>
+
+        <p>{{ users }}</p>
+
+        <table width="50%">
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>Action</th>
+            </tr>
+
+            {{ #each user}}
+            <tbody>
+                <tr>
+
+                    <td>{{>user.name }}</td>
+                    <td>{{>user.email }}</td>
+                    <td>{{>user.mobile }}</td>
+
+                    <td><a href="/admin/edit-user?id={{ user._id }}">Edit</a>
+                        <a class="btn btn-danger" onclick="confirmDelete(this);"
+                            href="/admin/deleteuser?id={{ user._id }}">Delete</a>
+                    </td>
+                </tr>
+            </tbody>
+            {{/each}}
+
+        </table>
+        <br>
+
+        <a href="/admin/home">Go to Home</a>

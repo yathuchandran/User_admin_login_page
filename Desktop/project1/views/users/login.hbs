@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  {{!-- <style>
+    .gradient-custom {
+      /* fallback for old browsers */
+      background: #ece8f1;
+
+      /* Chrome 10-25, Safari 5.1-6 */
+      background: -webkit-linear-gradient(to right, rgb(237, 232, 241), rgb(252, 37, 116));
+
+      /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      background: linear-gradient(to right, rgb(233, 229, 238), rgb(45, 119, 247))
+    }
+  </style> --}}
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+
+
+
+
+  <!-- 
+
+  <h1>Login</h1>
+  
+  <%  
+      if(typeof message !=='undefined'){
+          %>
+              <h4><%= message %></h4>
+          <%
+      }
+  
+  %>
+  
+  
+  
+  <input type="email" ">
+  <br><br>
+  <input type="password" >
+  <br><br>
+   >
+  
+  </form>
+  
+  
+  
+  <a href="/admin">Admin Login</a>
+ 
+   -->
+
+
+
+
+  {{!-- {{>userheader}}
+
+
+  <section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card bg-dark text-white" style="border-radius: 1rem;">
+            <div class="card-body p-5 text-center">
+
+              <div class="mb-md-5 mt-md-4 pb-5">
+                <fieldset disabled="disabled"></fieldset>
+                <form onclick="loginValidate()" action="/login" method="post">
+
+                  <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
+                  <p class="text-white-50 mb-5">Please enter your login and password!</p>
+
+                  <div class="form-outline form-white mb-4">
+
+
+
+                    <script src="../../validation.js"></script>
+
+
+
+                    <label class="form-label" for="typeEmailX">Email</label>
+                    <input type="email" name="email" id="email" placeholder="Enter email "
+                      class="form-control form-control-lg" />
+
+                    <h6 class="text-danger m-1" id="lEmailErr"></h6>
+                  </div>
+
+                  <div class="form-outline form-white mb-4">
+                    <label class="form-label" for="typePasswordX">Password</label>
+                    <input type="password" name="password" id="password" placeholder="Enter Password"
+                      class="form-control form-control-lg" />
+                    <h6 class="text-danger m-1" id="lPassErr"></h6>
+                  </div>
+
+
+
+
+                  {{#ifnoteq message 'undefined'}}
+                  <h4>{{message}}</h4>
+                  {{/ifnoteq}}
+
+
+                  <input class="btn btn-outline-light btn-lg px-5" type="submit" value="login">
+                </form>
+                <!-- <div class="d-flex justify-content-center text-center mt-4 pt-1">
+                    <a href="#!" class="text-white"><i class="fab fa-facebook-f fa-lg"></i></a>
+                    <a href="#!" class="text-white"><i class="fab fa-twitter fa-lg mx-4 px-2"></i></a>
+                    <a href="#!" class="text-white"><i class="fab fa-google fa-lg"></i></a>
+                  </div> -->
+
+              </div>
+
+              <div>
+                <p class="mb-0">Don't have an account? <a href="/register" class="text-white-50 fw-bold">Sign Up</a>
+                </p>
+              </div>
+              <div>
+                <p class="mb-0">Admin Login <a href="/Admin" class="text-white-50 fw-bold">Sign In</a>
+                </p>
+              </div>
+              <div>
+                <a href="/forget ">Forget password</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  {{>userfooter}}
+
+
+</body>
+
+</html> --}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{!-- {{>userheader}}
+
+<h1>Login</h1>
+
+{{#ifnoteq message 'undefined'}}
+<h4>{{message}}</h4>
+{{/ifnoteq}}
+
+
+<script src="/public/validation.js"></script>
+<form onclick="loginValidate()" class="login" action="/login" method="post">
+
+  <input type="email" id="email" name="email" placeholder="enter email">
+  <div id="lEmailErr" class="text-danger"></div>
+  <br><br>
+
+  <input type="password" id="password" name="password" placeholder="enter password">
+  <div id="lPassErr" class="text-danger"></div>
+  <br><br>
+
+  <input type="submit" value="Login">
+
+
+</form>
+
+<a href="/forget ">Forget password</a>
+
+{{>userfooter}} --}}
+
+
+
+
+
+
+
+
+
+
+{{>userheader}}
+
+
+
+<section class="vh-100" style="background-color: #ba7d8a;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-xl-10">
+        <div class="card" style="border-radius: 1rem;">
+          <div class="row g-0">
+            <div class="col-md-6 col-lg-5 d-none d-md-block">
+              <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img1.webp"
+                alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+            </div>
+            <div class="col-md-6 col-lg-7 d-flex align-items-center">
+              <div class="card-body p-4 p-lg-5 text-black">
+
+                <form onclick="loginValidate()" action="/login" method="post">
+
+                  <div class="d-flex align-items-center mb-3 pb-1">
+                    <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
+                    <span class="h1 fw-bold mb-0">Logo</span>
+                  </div>
+
+                  
+
+                  <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h5>
+
+                  <script src="../../validation.js"></script>
+
+
+                  <div class="form-outline mb-4">
+                    <input type="email" name="email" id="email" placeholder="Enter email " id="form2Example17"
+                      class="form-control form-control-lg" />
+                    <label class="form-label" for="form2Example17">Email address</label>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input type="password" name="password" id="password" placeholder="Enter Password"
+                      id="form2Example27" class="form-control form-control-lg" />
+                    <label class="form-label" for="form2Example27">Password</label>
+                  </div>
+
+
+                   {{#ifnoteq message 'undefined' }}
+                    <p style="color: red"> {{message }}</p>
+                    {{/ifnoteq}}
+
+                  <div class="pt-1 mb-4">
+                    <input class="btn btn-dark btn-lg btn-block" type="submit" value="login">
+                  </div>
+
+
+                </form>
+                <div>
+                  <p class="mb-0">Admin Login <a href="/Admin" class="mb-5 pb-lg-2" style="color: #393f81;">Sign In</a>
+                  </p>
+                </div>
+
+                <div>
+                  <p class="mb-0">Registeration <a href="/register" class="mb-5 pb-lg-2" style="color: #393f81;">Register</a>
+                  </p>
+                </div>
+
+                <a class="small text-muted" href="">Forgot password?</a>
+                <p class="mb-5 pb-lg-2" style="color: #393f81;">Don't have an account? <a 
+                    style="color: #393f81;">Register here</a ></p>
+                <a href="#!" class="small text-muted">Terms of use.</a>
+                <a href="#!" class="small text-muted">Privacy policy</a>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{>userfooter}}
+
+
+
+</body>
+
+</html>
