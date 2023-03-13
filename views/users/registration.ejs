@@ -76,7 +76,7 @@
               <div class="mb-md-5 mt-md-4 pb-5">
                 <fieldset disabled="disabled"></fieldset>
 
-                <form action="" method="post" enctype="multiple/form-data">
+                <form onclick="signupValidate()" action="" method="post" enctype="multiple/form-data">
               
   
                 <h2 class="fw-bold mb-2 text-uppercase">User Registration Form</h2>
@@ -84,29 +84,46 @@
                 <p class="text-white-50 mb-5">Please enter your login and password!</p>
   
                 <div class="form-outline form-white mb-4">
-                  <input type="name" name="name"  placeholder="Enter name " class="form-control form-control-lg" />
-                  <label class="form-label" for="typeEmailX">Name</label>
+                  <script src="../../validation.js"></script>
+                  <h6>Name</h6>
+                  <input type="name" name="name"  placeholder="Enter name " id="name" class="form-control form-control-lg" />
+                  <label class="form-label" for="typeEmailX"></label>
+                  <div id="nameErr"></div>
                 </div>
   
                 <div class="form-outline form-white mb-4">
-                  <input type="email" name="email" placeholder="Enter Email"  class="form-control form-control-lg" />
-                  <label class="form-label" for="typePasswordX">Email</label>
+                  <h6>Email</h6>
+                  <input type="email" name="email" placeholder="Enter Email" id="email"  class="form-control form-control-lg" />
+                  <label class="form-label" for="typePasswordX"></label>
+                  <div id="emailErr"></div>
                 </div>
 
                   <div class="form-outline form-white mb-4">
-                    <input type="text" name="mobile" placeholder="Enter Mobile"  class="form-control form-control-lg" />
-                    <label class="form-label" for="typeEmailX">Mobile</label>
+                    <h6>Mobile</h6>
+                    <input type="text" name="mobile" placeholder="Enter Mobile" id="mobile" class="form-control form-control-lg" />
+                    <label class="form-label" for="typeEmailX"></label>
+                  <div id="mobileErr"></div>
                   </div>
 
                   <div class="form-outline form-white mb-4">
-                    <input type="password" name="password"  placeholder="Enter password"   class="form-control form-control-lg" />
-                    <label class="form-label" for="typePasswordX">Password</label>
+                    <h6>Password</h6>
+                    <input type="password" name="password"  placeholder="Enter password"  id="password" class="form-control form-control-lg" />
+                    <label class="form-label" for="typePasswordX"></label>
+                 
+                  </div>
+                
+
+                  <div class="form-outline form-white mb-4">
+                    <h6>Password</h6>
+                    <input type="password" name="password2"  placeholder="Enter password" id="password2"  class="form-control form-control-lg" />
+                    <label class="form-label" for="typePasswordX"></label>
+                    <div id="passErr"></div>
                   </div>
                   <br>
                   <% 
                   if (typeof message !==  'undefined' ){ 
                       %>
-                      <p style="color:rgb(240, 247, 240);"><%= message %></p>
+                      <p style="color:rgb(3, 154, 3);"><%= message %> </p>
                       <%
                   } 
               %>

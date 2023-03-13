@@ -11,7 +11,7 @@ function printError(elemId, hintMsg) {
     var password = document.getElementById("password").value;
     var email = document.getElementById("email").value;
     var mobile = document.getElementById("mobile").value;
-  
+ 
     if (name == "") {
       printError("nameErr", "Please enter your name");
     } else {

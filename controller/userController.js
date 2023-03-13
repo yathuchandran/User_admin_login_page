@@ -31,9 +31,13 @@ const insertUser = async (req, res) => {
 
    try {
       var email = req.body.email
+
+const r=req.body;
+      if(r.password!=""&&r.password2!=""&&r.email!=""){
       const userData = await User.findOne({ email: email });
       // var emailMatch=await verify(userData.email, email)
       if (userData==null) {
+         if(req.body.password==req.body.password2){    
       req.body.password = await bcrypt.hash(req.body.password,10);
       const user = new User({
         name: req.body.name,
@@ -44,15 +48,20 @@ const insertUser = async (req, res) => {
        
       });
       const userData = await user.save(); //promising that wen user is inserted i will return the userdata
-    
-        res.render("registration", { message: "Registration successful" });
-      } else {
-        if(userData)
-        res.render("registration", { message: "user already exsist" });
+        res.render("registration", {message: "Registration successful" });
+      } else{
+         res.render("registration", {message: "passwords not match" });
       }
-    } catch (error) {
+      }else {
+        if(userData)
+        res.render("registration", {message: "user already exsist" });
+      }
+   }
+}
+   catch (error) {
       console.log(error.message);
     }
+   
   };
 
 //    try {

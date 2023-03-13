@@ -26,6 +26,6 @@ app.use('/admin', adminRoute);
 
 
 
-app.listen(4003, function () {
+app.listen(3321, function () {
     console.log("Server is running...");
 });
